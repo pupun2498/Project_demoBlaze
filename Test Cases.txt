@@ -1,0 +1,11 @@
+TC_01
+1. Open the demoblaze page
+2. Verify product store icon to confirm successful landing on page
+3. Click on product item
+4. Add item to cart
+
+TC_02
+1. Open demoblaze page and add a item to cart
+2. Verify the item is added in cart
+3. Place order with the necessary details
+4. Verify confirmation message after successful ordering of product
