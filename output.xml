@@ -1,418 +1,624 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.1 (Python 3.10.5 on win32)" generated="20220811 00:18:28.809" rpa="false">
+<robot generator="Robot 3.2.1 (Python 3.10.5 on win32)" generated="20220811 21:37:38.471" rpa="false">
 <suite id="s1" name="PROJECT DEMOBLAZE" source="D:\CODING STUFF\ROBOT\PROJECTS\PROJECT_DEMOBLAZE">
 <suite id="s1-s1" name="Scripts" source="D:\CODING STUFF\ROBOT\PROJECTS\PROJECT_DEMOBLAZE\Scripts">
 <suite id="s1-s1-s1" name="demoblaze ScriptOne" source="D:\CODING STUFF\ROBOT\PROJECTS\PROJECT_DEMOBLAZE\Scripts\demoblaze_ScriptOne.robot">
 <test id="s1-s1-s1-t1" name="TestCase_02">
+<kw name="Launch Browser" library="demoblaze_Keywords">
+<doc>Launch Browser and open specified url</doc>
+<arguments>
+<arg>${demoblaze_url}</arg>
+</arguments>
 <kw name="Create Webdriver" library="SeleniumLibrary">
 <doc>Creates an instance of Selenium WebDriver.</doc>
 <arguments>
 <arg>Chrome</arg>
 <arg>executable_path=${Chrome_driver_path}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:29.509" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20220811 00:18:29.507" endtime="20220811 00:18:31.270"></status>
+<msg timestamp="20220811 21:37:38.894" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20220811 21:37:38.893" endtime="20220811 21:37:40.838"></status>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220811 00:18:31.271" endtime="20220811 00:18:31.405"></status>
+<status status="PASS" starttime="20220811 21:37:40.839" endtime="20220811 21:37:40.976"></status>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
-<arg>${demoblaze_url}</arg>
+<arg>${url}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:31.407" level="INFO">Opening url 'https://www.demoblaze.com/'</msg>
-<status status="PASS" starttime="20220811 00:18:31.406" endtime="20220811 00:18:35.184"></status>
+<msg timestamp="20220811 21:37:40.977" level="INFO">Opening url 'https://www.demoblaze.com/'</msg>
+<status status="PASS" starttime="20220811 21:37:40.976" endtime="20220811 21:37:44.207"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2s</arg>
 </arguments>
-<msg timestamp="20220811 00:18:37.198" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220811 00:18:35.186" endtime="20220811 00:18:37.198"></status>
+<msg timestamp="20220811 21:37:46.217" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220811 21:37:44.207" endtime="20220811 21:37:46.218"></status>
 </kw>
 <kw name="Set Browser Implicit Wait" library="SeleniumLibrary">
 <doc>Sets the implicit wait value used by Selenium.</doc>
 <arguments>
 <arg>10s</arg>
 </arguments>
-<status status="PASS" starttime="20220811 00:18:37.199" endtime="20220811 00:18:37.204"></status>
+<status status="PASS" starttime="20220811 21:37:46.219" endtime="20220811 21:37:46.222"></status>
 </kw>
+<status status="PASS" starttime="20220811 21:37:38.892" endtime="20220811 21:37:46.223"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20220811 21:37:48.239" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220811 21:37:46.224" endtime="20220811 21:37:48.240"></status>
+</kw>
+<kw name="Scroll" library="demoblaze_Keywords">
+<doc>Scroll down by given value in Argumemt</doc>
+<arguments>
+<arg>${700}</arg>
+</arguments>
 <kw name="Execute Javascript" library="SeleniumLibrary">
 <doc>Executes the given JavaScript code with possible arguments.</doc>
 <arguments>
-<arg>scroll(0,800)</arg>
+<arg>scroll(0,${y})</arg>
 </arguments>
-<msg timestamp="20220811 00:18:37.207" level="INFO">Executing JavaScript:
-scroll(0,800)
+<msg timestamp="20220811 21:37:48.250" level="INFO">Executing JavaScript:
+scroll(0,700)
 Without any arguments.</msg>
-<status status="PASS" starttime="20220811 00:18:37.205" endtime="20220811 00:18:37.228"></status>
+<status status="PASS" starttime="20220811 21:37:48.247" endtime="20220811 21:37:48.278"></status>
 </kw>
+<status status="PASS" starttime="20220811 21:37:48.242" endtime="20220811 21:37:48.279"></status>
+</kw>
+<kw name="Click Element if Visible" library="demoblaze_Keywords">
+<doc>Check if Element is visible and Click Element</doc>
+<arguments>
+<arg>${product_One}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element should be Visible</arg>
+<arg>${product_variable}</arg>
+</arguments>
+<assign>
+<var>${Storing_Variable}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${product_variable}</arg>
+</arguments>
+<msg timestamp="20220811 21:37:48.339" level="INFO">Element 'xpath:(//a[contains(text(),'Samsung galaxy s7')])' is displayed.</msg>
+<status status="PASS" starttime="20220811 21:37:48.286" endtime="20220811 21:37:48.340"></status>
+</kw>
+<msg timestamp="20220811 21:37:48.340" level="INFO">${Storing_Variable} = True</msg>
+<status status="PASS" starttime="20220811 21:37:48.284" endtime="20220811 21:37:48.341"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${Storing_Variable}</arg>
+<arg>Click Element</arg>
+<arg>${product_variable}</arg>
+<arg>ELSE</arg>
+<arg>Capture Page Screenshot</arg>
+<arg>D:/CODING STUFF/ROBOT/PROJECTS/PROJECT_ONE/SCREENSHOTS/Error.png</arg>
+</arguments>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>${product_one}</arg>
+<arg>${product_variable}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:37.231" level="INFO">Clicking element 'xpath:(//a[contains(text(),'Samsung galaxy s7')])'.</msg>
-<status status="PASS" starttime="20220811 00:18:37.229" endtime="20220811 00:18:38.178"></status>
+<msg timestamp="20220811 21:37:48.343" level="INFO">Clicking element 'xpath:(//a[contains(text(),'Samsung galaxy s7')])'.</msg>
+<status status="PASS" starttime="20220811 21:37:48.343" endtime="20220811 21:37:49.193"></status>
 </kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" starttime="20220811 21:37:48.341" endtime="20220811 21:37:49.193"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:37:48.281" endtime="20220811 21:37:49.194"></status>
+</kw>
+<kw name="Click Element if Visible" library="demoblaze_Keywords">
+<doc>Check if Element is visible and Click Element</doc>
 <arguments>
 <arg>${cart_Button}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:38.181" level="INFO">Clicking element 'xpath:(//a[contains(text(),'Add to cart')])'.</msg>
-<status status="PASS" starttime="20220811 00:18:38.179" endtime="20220811 00:18:38.995"></status>
-</kw>
-<kw name="Sleep" library="BuiltIn">
-<doc>Pauses the test executed for the given time.</doc>
-<arguments>
-<arg>2s</arg>
-</arguments>
-<msg timestamp="20220811 00:18:40.998" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220811 00:18:38.996" endtime="20220811 00:18:40.999"></status>
-</kw>
-<kw name="Handle Alert" library="SeleniumLibrary">
-<doc>Handles the current alert and returns its message.</doc>
-<arguments>
-<arg>action=ACCEPT</arg>
-</arguments>
-<msg timestamp="20220811 00:18:41.002" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
-<status status="PASS" starttime="20220811 00:18:41.000" endtime="20220811 00:18:41.018"></status>
-</kw>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
 <arguments>
 <arg>Element should be Visible</arg>
-<arg>${cart_Icon}</arg>
+<arg>${product_variable}</arg>
 </arguments>
 <assign>
-<var>${cart_Icon_visible}</var>
+<var>${Storing_Variable}</var>
 </assign>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
-<arg>${cart_Icon}</arg>
+<arg>${product_variable}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:41.113" level="INFO">Element 'xpath:((//ul[@class='navbar-nav ml-auto']//li[@class='nav-item'])[3]//a[contains(text(),'Cart')])' is displayed.</msg>
-<status status="PASS" starttime="20220811 00:18:41.022" endtime="20220811 00:18:41.114"></status>
+<msg timestamp="20220811 21:37:49.841" level="INFO">Element 'xpath:(//a[contains(text(),'Add to cart')])' is displayed.</msg>
+<status status="PASS" starttime="20220811 21:37:49.197" endtime="20220811 21:37:49.842"></status>
 </kw>
-<msg timestamp="20220811 00:18:41.114" level="INFO">${cart_Icon_visible} = True</msg>
-<status status="PASS" starttime="20220811 00:18:41.020" endtime="20220811 00:18:41.114"></status>
+<msg timestamp="20220811 21:37:49.842" level="INFO">${Storing_Variable} = True</msg>
+<status status="PASS" starttime="20220811 21:37:49.196" endtime="20220811 21:37:49.843"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>${cart_Icon_visible}</arg>
+<arg>${Storing_Variable}</arg>
 <arg>Click Element</arg>
-<arg>${cart_Icon}</arg>
+<arg>${product_variable}</arg>
 <arg>ELSE</arg>
 <arg>Capture Page Screenshot</arg>
-<arg>D:/CODING STUFF/ROBOT/PROJECTS/PROJECT_ONE/SCREENSHOTS/Error_cart_Icon.png</arg>
+<arg>D:/CODING STUFF/ROBOT/PROJECTS/PROJECT_ONE/SCREENSHOTS/Error.png</arg>
 </arguments>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>${cart_Icon}</arg>
+<arg>${product_variable}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:41.115" level="INFO">Clicking element 'xpath:((//ul[@class='navbar-nav ml-auto']//li[@class='nav-item'])[3]//a[contains(text(),'Cart')])'.</msg>
-<status status="PASS" starttime="20220811 00:18:41.115" endtime="20220811 00:18:41.907"></status>
+<msg timestamp="20220811 21:37:49.844" level="INFO">Clicking element 'xpath:(//a[contains(text(),'Add to cart')])'.</msg>
+<status status="PASS" starttime="20220811 21:37:49.844" endtime="20220811 21:37:49.904"></status>
 </kw>
-<status status="PASS" starttime="20220811 00:18:41.114" endtime="20220811 00:18:41.908"></status>
+<status status="PASS" starttime="20220811 21:37:49.843" endtime="20220811 21:37:49.905"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:37:49.195" endtime="20220811 21:37:49.906"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2s</arg>
 </arguments>
-<msg timestamp="20220811 00:18:43.913" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220811 00:18:41.908" endtime="20220811 00:18:43.913"></status>
+<msg timestamp="20220811 21:37:51.917" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220811 21:37:49.907" endtime="20220811 21:37:51.917"></status>
 </kw>
+<kw name="Handle Alert if present" library="demoblaze_Keywords">
+<doc>Handle any alert</doc>
+<arguments>
+<arg>ACCEPT</arg>
+<arg>Product added</arg>
+</arguments>
+<kw name="Handle Alert" library="SeleniumLibrary">
+<doc>Handles the current alert and returns its message.</doc>
+<arguments>
+<arg>action=${Accept_Decline}</arg>
+</arguments>
+<assign>
+<var>${alert_Message}</var>
+</assign>
+<msg timestamp="20220811 21:37:51.919" level="INFO">HANDLE::&lt;class 'NoneType'&gt;::None</msg>
+<msg timestamp="20220811 21:37:51.925" level="INFO">${alert_Message} = Product added</msg>
+<status status="PASS" starttime="20220811 21:37:51.918" endtime="20220811 21:37:51.925"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>${alert_Message}</arg>
+<arg>${Alert_Expected_Text}</arg>
+</arguments>
+<status status="PASS" starttime="20220811 21:37:51.926" endtime="20220811 21:37:51.927"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:37:51.917" endtime="20220811 21:37:51.928"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20220811 21:37:53.936" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220811 21:37:51.929" endtime="20220811 21:37:53.936"></status>
+</kw>
+<kw name="Click Element if Visible" library="demoblaze_Keywords">
+<doc>Check if Element is visible and Click Element</doc>
+<arguments>
+<arg>${cart_Icon}</arg>
+</arguments>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
 <arguments>
 <arg>Element should be Visible</arg>
-<arg>${product_One_Icon}</arg>
+<arg>${product_variable}</arg>
 </arguments>
 <assign>
-<var>${product_One_Icon_visible}</var>
+<var>${Storing_Variable}</var>
 </assign>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
-<arg>${product_One_Icon}</arg>
+<arg>${product_variable}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:43.944" level="INFO">Element 'xpath:(//tbody[@id='tbodyid']//following-sibling::td[contains(text(),'Samsung')])' is displayed.</msg>
-<status status="PASS" starttime="20220811 00:18:43.914" endtime="20220811 00:18:43.944"></status>
+<msg timestamp="20220811 21:37:53.966" level="INFO">Element 'xpath:((//ul[@class='navbar-nav ml-auto']//li[@class='nav-item'])[3]//a[contains(text(),'Cart')])' is displayed.</msg>
+<status status="PASS" starttime="20220811 21:37:53.938" endtime="20220811 21:37:53.967"></status>
 </kw>
-<msg timestamp="20220811 00:18:43.944" level="INFO">${product_One_Icon_visible} = True</msg>
-<status status="PASS" starttime="20220811 00:18:43.914" endtime="20220811 00:18:43.944"></status>
+<msg timestamp="20220811 21:37:53.967" level="INFO">${Storing_Variable} = True</msg>
+<status status="PASS" starttime="20220811 21:37:53.938" endtime="20220811 21:37:53.967"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>${product_One_Icon_visible}</arg>
-<arg>log to console</arg>
-<arg>Element is visible</arg>
+<arg>${Storing_Variable}</arg>
+<arg>Click Element</arg>
+<arg>${product_variable}</arg>
 <arg>ELSE</arg>
 <arg>Capture Page Screenshot</arg>
-<arg>D:/CODING STUFF/ROBOT/PROJECTS/PROJECT_ONE/SCREENSHOTS/Error_product_One_Icon.png</arg>
+<arg>D:/CODING STUFF/ROBOT/PROJECTS/PROJECT_ONE/SCREENSHOTS/Error.png</arg>
+</arguments>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${product_variable}</arg>
+</arguments>
+<msg timestamp="20220811 21:37:53.969" level="INFO">Clicking element 'xpath:((//ul[@class='navbar-nav ml-auto']//li[@class='nav-item'])[3]//a[contains(text(),'Cart')])'.</msg>
+<status status="PASS" starttime="20220811 21:37:53.968" endtime="20220811 21:37:55.272"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:37:53.968" endtime="20220811 21:37:55.272"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:37:53.936" endtime="20220811 21:37:55.273"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20220811 21:37:57.276" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220811 21:37:55.273" endtime="20220811 21:37:57.277"></status>
+</kw>
+<kw name="Check if Element is Visible" library="demoblaze_Keywords">
+<doc>Check if Element is visible</doc>
+<arguments>
+<arg>${product_One_Icon}</arg>
+</arguments>
+<kw name="Run Keyword And Return Status" library="BuiltIn">
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<arguments>
+<arg>Element should be Visible</arg>
+<arg>${product_variable}</arg>
+</arguments>
+<assign>
+<var>${Storing_Variable}</var>
+</assign>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<arguments>
+<arg>${product_variable}</arg>
+</arguments>
+<msg timestamp="20220811 21:37:57.338" level="INFO">Element 'xpath:(//tbody[@id='tbodyid']//following-sibling::td[contains(text(),'Samsung')])' is displayed.</msg>
+<status status="PASS" starttime="20220811 21:37:57.282" endtime="20220811 21:37:57.339"></status>
+</kw>
+<msg timestamp="20220811 21:37:57.339" level="INFO">${Storing_Variable} = True</msg>
+<status status="PASS" starttime="20220811 21:37:57.281" endtime="20220811 21:37:57.340"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>${Storing_Variable}</arg>
+<arg>log to console</arg>
+<arg>${product_variable}</arg>
+<arg>ELSE</arg>
+<arg>Capture Page Screenshot</arg>
+<arg>D:/CODING STUFF/ROBOT/PROJECTS/PROJECT_ONE/SCREENSHOTS/Error.png</arg>
 </arguments>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
-<arg>Element is visible</arg>
+<arg>${product_variable}</arg>
 </arguments>
-<status status="PASS" starttime="20220811 00:18:43.946" endtime="20220811 00:18:43.946"></status>
+<status status="PASS" starttime="20220811 21:37:57.342" endtime="20220811 21:37:57.343"></status>
 </kw>
-<status status="PASS" starttime="20220811 00:18:43.945" endtime="20220811 00:18:43.947"></status>
+<status status="PASS" starttime="20220811 21:37:57.341" endtime="20220811 21:37:57.344"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:37:57.278" endtime="20220811 21:37:57.345"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2s</arg>
 </arguments>
-<msg timestamp="20220811 00:18:45.951" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220811 00:18:43.947" endtime="20220811 00:18:45.951"></status>
+<msg timestamp="20220811 21:37:59.359" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220811 21:37:57.345" endtime="20220811 21:37:59.360"></status>
 </kw>
+<kw name="Click Element if Visible" library="demoblaze_Keywords">
+<doc>Check if Element is visible and Click Element</doc>
+<arguments>
+<arg>${place_Order_Button}</arg>
+</arguments>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
 <arguments>
 <arg>Element should be Visible</arg>
-<arg>${place_Order_Button}</arg>
+<arg>${product_variable}</arg>
 </arguments>
 <assign>
-<var>${place_Order_visible}</var>
+<var>${Storing_Variable}</var>
 </assign>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
-<arg>${place_Order_Button}</arg>
+<arg>${product_variable}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:45.984" level="INFO">Element 'xpath:(//button[contains(text(),'Place Order')])' is displayed.</msg>
-<status status="PASS" starttime="20220811 00:18:45.952" endtime="20220811 00:18:45.984"></status>
+<msg timestamp="20220811 21:37:59.423" level="INFO">Element 'xpath:(//button[contains(text(),'Place Order')])' is displayed.</msg>
+<status status="PASS" starttime="20220811 21:37:59.366" endtime="20220811 21:37:59.423"></status>
 </kw>
-<msg timestamp="20220811 00:18:45.985" level="INFO">${place_Order_visible} = True</msg>
-<status status="PASS" starttime="20220811 00:18:45.952" endtime="20220811 00:18:45.985"></status>
+<msg timestamp="20220811 21:37:59.424" level="INFO">${Storing_Variable} = True</msg>
+<status status="PASS" starttime="20220811 21:37:59.365" endtime="20220811 21:37:59.424"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>${place_Order_visible}</arg>
+<arg>${Storing_Variable}</arg>
 <arg>Click Element</arg>
-<arg>${place_Order_Button}</arg>
+<arg>${product_variable}</arg>
 <arg>ELSE</arg>
 <arg>Capture Page Screenshot</arg>
-<arg>D:/CODING STUFF/ROBOT/PROJECTS/PROJECT_ONE/SCREENSHOTS/Error_place_Order_Button.png</arg>
+<arg>D:/CODING STUFF/ROBOT/PROJECTS/PROJECT_ONE/SCREENSHOTS/Error.png</arg>
 </arguments>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>${place_Order_Button}</arg>
+<arg>${product_variable}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:45.986" level="INFO">Clicking element 'xpath:(//button[contains(text(),'Place Order')])'.</msg>
-<status status="PASS" starttime="20220811 00:18:45.986" endtime="20220811 00:18:46.052"></status>
+<msg timestamp="20220811 21:37:59.427" level="INFO">Clicking element 'xpath:(//button[contains(text(),'Place Order')])'.</msg>
+<status status="PASS" starttime="20220811 21:37:59.427" endtime="20220811 21:37:59.493"></status>
 </kw>
-<status status="PASS" starttime="20220811 00:18:45.985" endtime="20220811 00:18:46.053"></status>
+<status status="PASS" starttime="20220811 21:37:59.425" endtime="20220811 21:37:59.494"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:37:59.362" endtime="20220811 21:37:59.495"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2s</arg>
 </arguments>
-<msg timestamp="20220811 00:18:48.063" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220811 00:18:46.053" endtime="20220811 00:18:48.064"></status>
+<msg timestamp="20220811 21:38:01.503" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220811 21:37:59.496" endtime="20220811 21:38:01.503"></status>
 </kw>
+<kw name="Enter Username" library="demoblaze_Keywords">
+<doc>Enter your username. Takes one argument</doc>
+<arguments>
+<arg>Test User Name</arg>
+</arguments>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
 <arg>${place_Order_Name}</arg>
-<arg>Ashutosh Mohapatra</arg>
+<arg>${username}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:48.066" level="INFO">Typing text 'Ashutosh Mohapatra' into text field 'xpath:(//div[@class='form-group']//input[@id='name'])'.</msg>
-<status status="PASS" starttime="20220811 00:18:48.064" endtime="20220811 00:18:48.235"></status>
+<msg timestamp="20220811 21:38:01.505" level="INFO">Typing text 'Test User Name' into text field 'xpath:(//div[@class='form-group']//input[@id='name'])'.</msg>
+<status status="PASS" starttime="20220811 21:38:01.505" endtime="20220811 21:38:01.655"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:38:01.504" endtime="20220811 21:38:01.656"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1s</arg>
 </arguments>
-<msg timestamp="20220811 00:18:49.237" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220811 00:18:48.235" endtime="20220811 00:18:49.238"></status>
+<msg timestamp="20220811 21:38:02.664" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220811 21:38:01.656" endtime="20220811 21:38:02.664"></status>
 </kw>
+<kw name="Enter Country" library="demoblaze_Keywords">
+<doc>Enter your username. Takes one argument</doc>
+<arguments>
+<arg>India</arg>
+</arguments>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
 <arg>${place_Order_Country}</arg>
-<arg>India</arg>
+<arg>${country}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:49.241" level="INFO">Typing text 'India' into text field 'xpath:(//div[@class='form-group']//input[@id='country'])'.</msg>
-<status status="PASS" starttime="20220811 00:18:49.239" endtime="20220811 00:18:49.446"></status>
+<msg timestamp="20220811 21:38:02.667" level="INFO">Typing text 'India' into text field 'xpath:(//div[@class='form-group']//input[@id='country'])'.</msg>
+<status status="PASS" starttime="20220811 21:38:02.666" endtime="20220811 21:38:02.789"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:38:02.665" endtime="20220811 21:38:02.790"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1s</arg>
 </arguments>
-<msg timestamp="20220811 00:18:50.452" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220811 00:18:49.446" endtime="20220811 00:18:50.453"></status>
+<msg timestamp="20220811 21:38:03.804" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220811 21:38:02.790" endtime="20220811 21:38:03.804"></status>
 </kw>
+<kw name="Enter City" library="demoblaze_Keywords">
+<doc>Enter your username. Takes one argument</doc>
+<arguments>
+<arg>Odisha</arg>
+</arguments>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
 <arg>${place_Order_City}</arg>
-<arg>Odisha</arg>
+<arg>${City}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:50.457" level="INFO">Typing text 'Odisha' into text field 'xpath:(//div[@class='form-group']//input[@id='city'])'.</msg>
-<status status="PASS" starttime="20220811 00:18:50.455" endtime="20220811 00:18:50.784"></status>
+<msg timestamp="20220811 21:38:03.807" level="INFO">Typing text 'Odisha' into text field 'xpath:(//div[@class='form-group']//input[@id='city'])'.</msg>
+<status status="PASS" starttime="20220811 21:38:03.806" endtime="20220811 21:38:03.956"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:38:03.805" endtime="20220811 21:38:03.956"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1s</arg>
 </arguments>
-<msg timestamp="20220811 00:18:51.785" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220811 00:18:50.785" endtime="20220811 00:18:51.787"></status>
+<msg timestamp="20220811 21:38:04.972" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220811 21:38:03.957" endtime="20220811 21:38:04.972"></status>
 </kw>
+<kw name="Enter Credit" library="demoblaze_Keywords">
+<doc>Enter your username. Takes one argument</doc>
+<arguments>
+<arg>9999 8888 7777 6666</arg>
+</arguments>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
 <arg>${place_Order_Credit}</arg>
-<arg>9999 8888 7777 6666</arg>
+<arg>${Credit}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:51.790" level="INFO">Typing text '9999 8888 7777 6666' into text field 'xpath:(//div[@class='form-group']//input[@id='card'])'.</msg>
-<status status="PASS" starttime="20220811 00:18:51.788" endtime="20220811 00:18:52.137"></status>
+<msg timestamp="20220811 21:38:04.974" level="INFO">Typing text '9999 8888 7777 6666' into text field 'xpath:(//div[@class='form-group']//input[@id='card'])'.</msg>
+<status status="PASS" starttime="20220811 21:38:04.973" endtime="20220811 21:38:05.133"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:38:04.973" endtime="20220811 21:38:05.134"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1s</arg>
 </arguments>
-<msg timestamp="20220811 00:18:53.145" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220811 00:18:52.138" endtime="20220811 00:18:53.146"></status>
+<msg timestamp="20220811 21:38:06.148" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220811 21:38:05.134" endtime="20220811 21:38:06.148"></status>
 </kw>
+<kw name="Enter Month" library="demoblaze_Keywords">
+<doc>Enter your username. Takes one argument</doc>
+<arguments>
+<arg>02</arg>
+</arguments>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
 <arg>${place_Order_Month}</arg>
-<arg>02</arg>
+<arg>${Month}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:53.148" level="INFO">Typing text '02' into text field 'xpath:(//div[@class='form-group']//input[@id='month'])'.</msg>
-<status status="PASS" starttime="20220811 00:18:53.146" endtime="20220811 00:18:53.286"></status>
+<msg timestamp="20220811 21:38:06.150" level="INFO">Typing text '02' into text field 'xpath:(//div[@class='form-group']//input[@id='month'])'.</msg>
+<status status="PASS" starttime="20220811 21:38:06.150" endtime="20220811 21:38:06.262"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:38:06.149" endtime="20220811 21:38:06.262"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1s</arg>
 </arguments>
-<msg timestamp="20220811 00:18:54.294" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220811 00:18:53.287" endtime="20220811 00:18:54.294"></status>
+<msg timestamp="20220811 21:38:07.273" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220811 21:38:06.264" endtime="20220811 21:38:07.274"></status>
 </kw>
+<kw name="Enter Year" library="demoblaze_Keywords">
+<doc>Enter your username. Takes one argument</doc>
+<arguments>
+<arg>26</arg>
+</arguments>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
 <arguments>
 <arg>${place_Order_Year}</arg>
-<arg>26</arg>
+<arg>${Year}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:54.296" level="INFO">Typing text '26' into text field 'xpath:(//div[@class='form-group']//input[@id='year'])'.</msg>
-<status status="PASS" starttime="20220811 00:18:54.295" endtime="20220811 00:18:54.416"></status>
+<msg timestamp="20220811 21:38:07.281" level="INFO">Typing text '26' into text field 'xpath:(//div[@class='form-group']//input[@id='year'])'.</msg>
+<status status="PASS" starttime="20220811 21:38:07.278" endtime="20220811 21:38:07.453"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:38:07.275" endtime="20220811 21:38:07.454"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>1s</arg>
 </arguments>
-<msg timestamp="20220811 00:18:55.427" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20220811 00:18:54.416" endtime="20220811 00:18:55.429"></status>
+<msg timestamp="20220811 21:38:08.469" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20220811 21:38:07.455" endtime="20220811 21:38:08.470"></status>
 </kw>
+<kw name="Click Element if Visible" library="demoblaze_Keywords">
+<doc>Check if Element is visible and Click Element</doc>
+<arguments>
+<arg>${purchase_Button}</arg>
+</arguments>
 <kw name="Run Keyword And Return Status" library="BuiltIn">
 <doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
 <arguments>
 <arg>Element should be Visible</arg>
-<arg>${purchase_Button}</arg>
+<arg>${product_variable}</arg>
 </arguments>
 <assign>
-<var>${purchase_Button_visible}</var>
+<var>${Storing_Variable}</var>
 </assign>
 <kw name="Element Should Be Visible" library="SeleniumLibrary">
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
 <arguments>
-<arg>${purchase_Button}</arg>
+<arg>${product_variable}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:55.511" level="INFO">Element 'xpath:(//button[contains(text(),'Purchase')])' is displayed.</msg>
-<status status="PASS" starttime="20220811 00:18:55.433" endtime="20220811 00:18:55.512"></status>
+<msg timestamp="20220811 21:38:08.520" level="INFO">Element 'xpath:(//button[contains(text(),'Purchase')])' is displayed.</msg>
+<status status="PASS" starttime="20220811 21:38:08.473" endtime="20220811 21:38:08.520"></status>
 </kw>
-<msg timestamp="20220811 00:18:55.513" level="INFO">${purchase_Button_visible} = True</msg>
-<status status="PASS" starttime="20220811 00:18:55.430" endtime="20220811 00:18:55.513"></status>
+<msg timestamp="20220811 21:38:08.521" level="INFO">${Storing_Variable} = True</msg>
+<status status="PASS" starttime="20220811 21:38:08.472" endtime="20220811 21:38:08.521"></status>
 </kw>
 <kw name="Run Keyword If" library="BuiltIn">
 <doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
 <arguments>
-<arg>${purchase_Button_visible}</arg>
+<arg>${Storing_Variable}</arg>
 <arg>Click Element</arg>
-<arg>${purchase_Button}</arg>
+<arg>${product_variable}</arg>
 <arg>ELSE</arg>
 <arg>Capture Page Screenshot</arg>
-<arg>D:/CODING STUFF/ROBOT/PROJECTS/PROJECT_ONE/SCREENSHOTS/Error_purchase_Button.png</arg>
+<arg>D:/CODING STUFF/ROBOT/PROJECTS/PROJECT_ONE/SCREENSHOTS/Error.png</arg>
 </arguments>
 <kw name="Click Element" library="SeleniumLibrary">
 <doc>Click the element identified by ``locator``.</doc>
 <arguments>
-<arg>${purchase_Button}</arg>
+<arg>${product_variable}</arg>
 </arguments>
-<msg timestamp="20220811 00:18:55.516" level="INFO">Clicking element 'xpath:(//button[contains(text(),'Purchase')])'.</msg>
-<status status="PASS" starttime="20220811 00:18:55.516" endtime="20220811 00:18:55.663"></status>
+<msg timestamp="20220811 21:38:08.523" level="INFO">Clicking element 'xpath:(//button[contains(text(),'Purchase')])'.</msg>
+<status status="PASS" starttime="20220811 21:38:08.522" endtime="20220811 21:38:08.593"></status>
 </kw>
-<status status="PASS" starttime="20220811 00:18:55.514" endtime="20220811 00:18:55.663"></status>
+<status status="PASS" starttime="20220811 21:38:08.521" endtime="20220811 21:38:08.593"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:38:08.470" endtime="20220811 21:38:08.594"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2s</arg>
 </arguments>
-<msg timestamp="20220811 00:18:57.677" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220811 00:18:55.664" endtime="20220811 00:18:57.678"></status>
+<msg timestamp="20220811 21:38:10.597" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220811 21:38:08.595" endtime="20220811 21:38:10.597"></status>
 </kw>
+<kw name="Verify Text" library="demoblaze_Keywords">
+<doc>Verify the expected text. Takes two Arguments</doc>
+<arguments>
+<arg>${confirm_Message}</arg>
+<arg>Thank you for your purchase!</arg>
+</arguments>
 <kw name="Get Text" library="SeleniumLibrary">
 <doc>Returns the text value of the element identified by ``locator``.</doc>
 <arguments>
-<arg>${confirm_Message}</arg>
+<arg>${actual_Text}</arg>
 </arguments>
 <assign>
 <var>${confirm_Message_visible}</var>
 </assign>
-<msg timestamp="20220811 00:18:57.754" level="INFO">${confirm_Message_visible} = Thank you for your purchase!</msg>
-<status status="PASS" starttime="20220811 00:18:57.679" endtime="20220811 00:18:57.755"></status>
+<msg timestamp="20220811 21:38:10.629" level="INFO">${confirm_Message_visible} = Thank you for your purchase!</msg>
+<status status="PASS" starttime="20220811 21:38:10.599" endtime="20220811 21:38:10.629"></status>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <doc>Fails if the given objects are unequal.</doc>
 <arguments>
 <arg>${confirm_Message_Visible}</arg>
-<arg>Thank you for your purchase!</arg>
+<arg>${expected_Text}</arg>
 </arguments>
-<status status="PASS" starttime="20220811 00:18:57.756" endtime="20220811 00:18:57.758"></status>
+<status status="PASS" starttime="20220811 21:38:10.630" endtime="20220811 21:38:10.631"></status>
+</kw>
+<status status="PASS" starttime="20220811 21:38:10.598" endtime="20220811 21:38:10.632"></status>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <doc>Pauses the test executed for the given time.</doc>
 <arguments>
 <arg>2s</arg>
 </arguments>
-<msg timestamp="20220811 00:18:59.771" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" starttime="20220811 00:18:57.759" endtime="20220811 00:18:59.772"></status>
+<msg timestamp="20220811 21:38:12.635" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220811 21:38:10.632" endtime="20220811 21:38:12.636"></status>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20220811 00:18:59.772" endtime="20220811 00:19:02.086"></status>
+<status status="PASS" starttime="20220811 21:38:12.637" endtime="20220811 21:38:14.970"></status>
 </kw>
-<status status="PASS" starttime="20220811 00:18:29.503" endtime="20220811 00:19:02.088" critical="yes"></status>
+<status status="PASS" starttime="20220811 21:37:38.891" endtime="20220811 21:38:14.972" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20220811 00:18:28.893" endtime="20220811 00:19:02.091"></status>
+<status status="PASS" starttime="20220811 21:37:38.553" endtime="20220811 21:38:14.977"></status>
 </suite>
-<status status="PASS" starttime="20220811 00:18:28.889" endtime="20220811 00:19:02.104"></status>
+<status status="PASS" starttime="20220811 21:37:38.549" endtime="20220811 21:38:14.996"></status>
 </suite>
-<status status="PASS" starttime="20220811 00:18:28.860" endtime="20220811 00:19:02.112"></status>
+<status status="PASS" starttime="20220811 21:37:38.522" endtime="20220811 21:38:15.005"></status>
 </suite>
 <statistics>
 <total>
